@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package podinfo;
+
+option go_package = "podinfopb";
+
+// info.go
+message RuntimeResponse {
+    string hostname = 1;
+    string version = 2;
+    string revision = 3;
+    string color = 4;
+    string logo = 5;
+    string message = 6;
+    string goos = 7;
+    string goarch = 8;
+    string runtime = 9;
+    string num_goroutine = 10;
+    string num_cpu = 11;
+}
+
+message GetInfoRequest {
+
+}
+
+message GetInfoResponse {
+    RuntimeResponse runtime_response = 1;
+}
+
+// version.go
+message Version {
+    string version = 1;
+    string commit = 2;
+}
+
+message GetVersionRequest {
+
+}
+
+message GetVersionResponse {
+    Version version = 1;
+}
+
+// echo.go
+
+
+// env.go
+
+// header.go
+
+// delay.go
+message GetDelayRequest {
+    int64 wait = 1;
+}
+
+message GetDelayResponse {
+    int64 delay = 1;
+}
+
+//
+
+
+// chunked.go
+message Chunked {
+    int32 delay = 1;
+}
+
+message GetChunkedRequest {
+    string wait = 1;
+}
+
+message GetChunkedResponse {
+    Chunked chunked = 1;
+}
+
+//
